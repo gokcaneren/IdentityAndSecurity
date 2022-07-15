@@ -12,11 +12,16 @@ namespace WebApp_UnderTheHood.Pages.Account
         public void OnGet()
         {
         }
+
+        public void OnPost()
+        {
+        }
     }
 
     public class Credential
     {
         [Required]
+        [Display(Name ="User Name")]
         public string UserName { get; set; }
 
         [Required]
