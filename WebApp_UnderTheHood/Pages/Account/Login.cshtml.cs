@@ -13,6 +13,7 @@ namespace WebApp_UnderTheHood.Pages.Account
 
         public void OnGet()
         {
+
         }
 
         public async Task<IActionResult> OnPost()
