@@ -13,6 +13,9 @@ builder.Services.AddAuthorization(opt =>
 {
     opt.AddPolicy("MustBelongToHRDepartment",
         policy => policy.RequireClaim("Department", "HR"));
+
+    opt.AddPolicy("AdminOnly",
+        policy => policy.RequireClaim("Admin"));
 });
 
 var app = builder.Build();
