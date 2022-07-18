@@ -5,7 +5,16 @@ builder.Services.AddRazorPages();
 builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt =>
 {
     opt.Cookie.Name = "MyCookieAuth";
+    opt.LoginPath = "/Account/Login";
+    opt.AccessDeniedPath = "/Account/AccesDenied";
 });
+
+builder.Services.AddAuthorization(opt =>
+{
+    opt.AddPolicy("MustBelongToHRDepartment",
+        policy => policy.RequireClaim("Department", "HR"));
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
