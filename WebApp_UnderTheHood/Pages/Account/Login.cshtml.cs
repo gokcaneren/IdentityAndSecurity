@@ -31,7 +31,8 @@ namespace WebApp_UnderTheHood.Pages.Account
                     new Claim(ClaimTypes.Name, "admin"),
                     new Claim(ClaimTypes.Email, "admin@mywww.com"),
                     new Claim("Department", "HR"),
-                    new Claim("Admin", "true")
+                    new Claim("Admin", "true"),
+                    new Claim("Manager", "true")
                 };
                 var identity = new ClaimsIdentity(claims, "MyCookieAuth");
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);

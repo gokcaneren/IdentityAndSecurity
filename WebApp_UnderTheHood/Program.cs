@@ -16,6 +16,10 @@ builder.Services.AddAuthorization(opt =>
 
     opt.AddPolicy("AdminOnly",
         policy => policy.RequireClaim("Admin"));
+
+    opt.AddPolicy("HRManagerOnly",
+        policy => policy.RequireClaim("Department", "HR")
+        .RequireClaim("Manager"));
 });
 
 var app = builder.Build();
