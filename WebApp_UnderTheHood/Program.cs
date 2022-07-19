@@ -10,6 +10,7 @@ builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt
     opt.Cookie.Name = "MyCookieAuth";
     opt.LoginPath = "/Account/Login";
     opt.AccessDeniedPath = "/Account/AccesDenied";
+    opt.ExpireTimeSpan = TimeSpan.FromSeconds(30);
 });
 
 builder.Services.AddAuthorization(opt =>

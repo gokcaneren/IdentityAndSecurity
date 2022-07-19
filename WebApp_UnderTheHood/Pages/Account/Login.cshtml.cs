@@ -38,6 +38,11 @@ namespace WebApp_UnderTheHood.Pages.Account
                 var identity = new ClaimsIdentity(claims, "MyCookieAuth");
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
+                var authProperties = new AuthenticationProperties
+                {
+                    IsPersistent = Credential.RememberMe
+                };
+
                 await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
                 return RedirectToPage("/Index");
             }
