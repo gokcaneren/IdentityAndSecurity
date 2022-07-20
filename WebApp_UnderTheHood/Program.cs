@@ -31,7 +31,7 @@ builder.Services.AddSingleton<IAuthorizationHandler, HRManagerProbationRequireme
 
 builder.Services.AddHttpClient("OurWebApi", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:44325");
+    client.BaseAddress = new Uri("https://localhost:44325/");
 });
 
 var app = builder.Build();
