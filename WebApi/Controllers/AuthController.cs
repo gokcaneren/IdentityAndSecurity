@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 
 namespace WebApi.Controllers
 {
@@ -8,6 +11,13 @@ namespace WebApi.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly IConfiguration configuration;
+
+        public AuthController(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
+
         [HttpPost]
         public IActionResult Authenticate([FromBody]Credential credential)
         {
@@ -29,7 +39,7 @@ namespace WebApi.Controllers
 
                 return Ok(new
                 {
-                    access_token = "",
+                    access_token = CreateToken(claims,expiresAt),
                     expires_at = expiresAt
                 });
             }
@@ -38,7 +48,19 @@ namespace WebApi.Controllers
             return Unauthorized(ModelState);
         }
 
+        private string CreateToken(IEnumerable<Claim> claims, DateTime expiresAt)
+        {
+            var secretKey = Encoding.ASCII.GetBytes(configuration.GetValue<string>("SecretKey"));
 
+            var jwt=new JwtSecurityToken(
+                claims:claims,
+                notBefore:DateTime.UtcNow,
+                expires:expiresAt,
+                signingCredentials:new SigningCredentials(
+                    new SymmetricSecurityKey(secretKey),
+                    SecurityAlgorithms.HmacSha256Signature));
+            return new JwtSecurityTokenHandler().WriteToken(jwt);
+        }
     }
 
 

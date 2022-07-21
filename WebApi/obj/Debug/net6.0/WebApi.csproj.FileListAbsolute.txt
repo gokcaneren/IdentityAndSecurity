@@ -25,3 +25,11 @@ C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\obj\Debug\net6.
 C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\obj\Debug\net6.0\WebApi.pdb
 C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\obj\Debug\net6.0\ref\WebApi.dll
+C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Gok\Desktop\c# console proje\WebApp_UnderTheHood\WebApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
